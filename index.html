@@ -1,0 +1,105 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>shoes</title>
+        <link href="https://fonts.googleapis.com/css?family=Elsie:900" rel="stylesheet">
+        <style>
+         html, body {
+             background: #f1dfe2;
+             color: black;
+             font-family: arial;
+             height: 100%;
+             text-align: center;
+         }
+         .hero {
+             height: 450px;
+             width: 700px;
+             padding: 12px;
+             margin: 100px auto;
+             border: 2px solid #f1dfe2;
+             transition: border 500ms;
+         }
+         .hero:hover {
+             border: 2px solid black;
+             transition: border 500ms;
+         }
+         .hero-inner {
+             position: relative;
+             border: 2px solid black;
+             height: 100%;
+         }
+         .hero h1 {
+             font-family: 'Elsie', cursive;
+             font-size: 84px;
+             background: linear-gradient(to right, #834d41, #f4a899, #834d41);
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+             text-transform: uppercase;
+             display: inline-block;
+         }
+         .animation-container {
+             position: absolute;
+             bottom: 50px;
+             left: 50%;
+             margin-left: -50%;
+             width: 100%;
+             height: 150px;
+         }
+         @keyframes left-shoe-animation {
+             0%   { left:  5%; bottom:  0px; transform: rotate(0deg);  }
+             20%  { left:  5%; bottom:  0px; transform: rotate(0deg);  } /* step 1 start */
+             30%  { left: 25%; bottom: 50px; transform: rotate(15deg); } /* step 1 mid */
+             40%  { left: 45%; bottom:  0px; transform: rotate(0deg);  } /* step 1 end */
+             60%  { left: 45%; bottom:  0px; transform: rotate(0deg);  } /* step 3 start */
+             70%  { left: 65%; bottom: 50px; transform: rotate(15deg); } /* step 3 mid */
+             80%  { left: 75%; bottom:  0px; transform: rotate(0deg);  } /* step 3 end & turn start */
+             100% { left: 75%; bottom:  0px; transform: rotate(0deg) rotateY(150deg); transform-origin: 80%; }
+         }
+         @keyframes right-shoe-animation {
+             0%   { left: 15%; bottom:  0px; transform: rotate(0deg);  }
+             40%  { left: 15%; bottom:  0px; transform: rotate(0deg);  } /* step 2 start */
+             50%  { left: 45%; bottom: 50px; transform: rotate(15deg); } /* step 2 mid */
+             60%  { left: 65%; bottom:  0px; transform: rotate(0deg);  } /* step 2 end */
+             82%  { left: 65%; bottom:  0px; transform: rotate(0deg);  } /* turn start */
+             100% { left: 65%; bottom:  0px; transform: rotate(0deg) rotateY(150deg); transform-origin: 80%; }
+         }
+         .shoe {
+             position: absolute;
+             animation-iteration-count: 1;
+             animation-timing-function: linear;
+             animation-duration: 4000ms;
+             transform-origin: 0% 0%;
+             height: 93px;
+             width: 100px;
+             background: transparent url(./images/shoe.png) no-repeat center;
+             background-size: contain;
+             bottom: 0;
+         }
+         .left-shoe {
+             animation-name: left-shoe-animation;
+             left: 75%;
+             bottom:  0px;
+             transform: rotate(0deg) rotateY(150deg);
+             transform-origin: 80%;
+         }
+         .right-shoe {
+             animation-name: right-shoe-animation;
+             left: 65%;
+             bottom:  0px;
+             transform: rotate(0deg) rotateY(150deg);
+             transform-origin: 80%;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <div class="hero-inner">
+                <h1>Sher Fatale</h1>
+                <div class="animation-container">
+                    <div class="shoe left-shoe"> </div>
+                    <div class="shoe right-shoe"> </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
